@@ -48,6 +48,8 @@ DynamicLibrary {
     }
 
     files: [
+        "axonometricrenderer.cpp",
+        "axonometricrenderer.h",
         "compression.cpp",
         "compression.h",
         "containerhelpers.h",
@@ -115,12 +117,12 @@ DynamicLibrary {
         "templatemanager.h",
         "terrain.h",
         "tile.cpp",
+        "tile.h",
         "tileanimationdriver.cpp",
         "tileanimationdriver.h",
         "tiled.cpp",
-        "tiled_global.h",
         "tiled.h",
-        "tile.h",
+        "tiled_global.h",
         "tilelayer.cpp",
         "tilelayer.h",
         "tileset.cpp",
