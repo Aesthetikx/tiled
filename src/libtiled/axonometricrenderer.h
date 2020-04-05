@@ -35,7 +35,7 @@ namespace Tiled {
 /**
  * A generic axonometric map renderer.
  */
-class TILEDSHARED_EXPORT AxonometricRenderer final : public MapRenderer
+class TILEDSHARED_EXPORT AxonometricRenderer : public MapRenderer
 {
 public:
     AxonometricRenderer(const Map *map) : MapRenderer(map) {}
