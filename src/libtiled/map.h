@@ -95,6 +95,7 @@ public:
         Unknown,
         Orthogonal,
         Isometric,
+        Trimetric,
         Staggered,
         Hexagonal
     };

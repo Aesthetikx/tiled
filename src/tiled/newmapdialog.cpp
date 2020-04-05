@@ -22,6 +22,7 @@
 #include "ui_newmapdialog.h"
 
 #include "isometricrenderer.h"
+#include "trimetricrenderer.h"
 #include "hexagonalrenderer.h"
 #include "map.h"
 #include "mapdocument.h"
@@ -104,6 +105,7 @@ NewMapDialog::NewMapDialog(QWidget *parent) :
     mUi->orientation->addItem(tr("Isometric"), QVariant::fromValue(Map::Isometric));
     mUi->orientation->addItem(tr("Isometric (Staggered)"), QVariant::fromValue(Map::Staggered));
     mUi->orientation->addItem(tr("Hexagonal (Staggered)"), QVariant::fromValue(Map::Hexagonal));
+    mUi->orientation->addItem(tr("Trimetric"), QVariant::fromValue(Map::Trimetric));
 
     if (!setComboBoxValue(mUi->orientation, orientation))
         setComboBoxValue(mUi->orientation, Map::Orthogonal);
@@ -217,6 +219,9 @@ void NewMapDialog::refreshPixelSize()
         break;
     case Map::Hexagonal:
         size = HexagonalRenderer(&map).mapBoundingRect().size();
+        break;
+    case Map::Trimetric:
+        size = TrimetricRenderer(&map).mapBoundingRect().size();
         break;
     default:
         size = OrthogonalRenderer(&map).mapBoundingRect().size();
